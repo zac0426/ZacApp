@@ -40,7 +40,8 @@ def home():
 
 
     # read user data
-    sheet_csv = st.secrets["user_database_url"]
+    sheet_csv = "https://docs.google.com/spreadsheets/d/1lEaiW6AZxlx0DV1-pG7cDOqMl6n0FCI-qoe5f0tszkI/export?format=csv"
+    # sheet_csv = st.secrets["user_database_url"]
     res = rs.get(url=sheet_csv)
     open('user_database.csv', 'wb').write(res.content)
     user_database = pd.read_csv('user_database.csv', header=0)
